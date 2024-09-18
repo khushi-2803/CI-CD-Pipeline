@@ -26,6 +26,7 @@ apt install
 apt-get update
 apt install apache2
 cd /var/www/html -> # systemctl start apache2 -> # systemctl enable apache2
+
 -----------------------install java---------------------------------
 
 apt-get update
@@ -41,6 +42,7 @@ https://pkg.jenkins.io/debian-stable binary/ | sudo tee
 
 apt-get update
 apt-get install jenkins -> systemctl start jenkins -> systemctl enable jenkins
+
 --------------------allow firewall traffic-------------------------------
 
 ufw allow 8080
@@ -48,6 +50,7 @@ ufw allow openSSH
 ufw enable
 ufw status
 service jenkins status
+
 -----------------jenkins login page setup------------------------------
 
 go to browser, enter "http://your-public-ip-address:8080" . jenkins login page will open. to enter the password, go to terminal and type "cat /var/lib/jenkins/secrets/initialAdminPassword" copy and paste the password. now setup and fill the details that are been asked
@@ -67,6 +70,7 @@ in terminal , direct to " cd /var/www/html" ->ls -> # cd /var/lib/jenkins/worksp
 
 usermod -aG www-data jenkins
 sudo chown jenkins:www-data html
+
 --------------------------testing the working-------------------------------
 
 go to repo, chnage anything like in index,html page changing the name khushi's porfolio to khushi's portfolio page, commit the changes. in jenkins, you'll observe that a job is been build automatically and then when you reload the webpage on browser you'll see the chnage that were committed by you.
