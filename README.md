@@ -73,4 +73,4 @@ sudo chown jenkins:www-data html
 
 --------------------------testing the working-------------------------------
 
-go to repo, chnage anything like in index,html page changing the name khushi's porfolio to khushi's portfolio page, commit the changes. in jenkins, you'll observe that a job is been build automatically and then when you reload the webpage on browser you'll see the chnage that were committed by you.
+go to repo, change anything like in index,html page changing the name khushi's porfolio to khushi's portfolio page, commit the changes. in jenkins, you'll observe that a job is been build automatically and then when you reload the webpage on browser you'll see the chnage that were committed by you.
