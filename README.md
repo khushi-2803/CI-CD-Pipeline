@@ -13,43 +13,43 @@
 
 -------------------------------------EC2 launch------------------------------------------------
 
-launch the instance select the machine (ex:- ubuntu) create key-pair if not existing. allow all traffic http, ssh and https. launch an instance. select the instance , move to security tab , under it click on security group then edit inbound rules and add the rule type custom tcp and give port range 8080 and select 0.0.0.0/0 from cidr blocks.
+-launch the instance select the machine (ex:- ubuntu) create key-pair if not existing. allow all traffic http, ssh and https. launch an instance. select the instance , move to security tab , under it click on security group then edit inbound rules and add the rule type custom tcp and give port range 8080 and select 0.0.0.0/0 from cidr blocks.
 
 -------------------------------run the machine-------------------------------------
 
-cd downloads ssh -i "key-name.pem" ubuntu@ip-address
+#cd downloads ssh -i "key-name.pem" ubuntu@ip-address
 
 -------------------------install apache2---------------------------------
 
-sudo -i
-apt install
-apt-get update
-apt install apache2
-cd /var/www/html -> # systemctl start apache2 -> # systemctl enable apache2
+#sudo -i
+#apt install
+#apt-get update
+#apt install apache2
+#cd /var/www/html -> # systemctl start apache2 -> # systemctl enable apache2
 
 -----------------------install java---------------------------------
 
-apt-get update
-apt install openjdk-17-jdk openjdk-17-jre
+#apt-get update
+#apt install openjdk-17-jdk openjdk-17-jre
 ------------------------install jenkins-----------------------------------
 
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+#sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
 https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
-echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+#echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 https://pkg.jenkins.io/debian-stable binary/ | sudo tee
 /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-apt-get update
-apt-get install jenkins -> systemctl start jenkins -> systemctl enable jenkins
+#apt-get update
+#apt-get install jenkins -> #systemctl start jenkins -> #systemctl enable jenkins
 
 --------------------allow firewall traffic-------------------------------
 
-ufw allow 8080
-ufw allow openSSH
-ufw enable
-ufw status
-service jenkins status
+#ufw allow 8080
+#ufw allow openSSH
+#ufw enable
+#ufw status
+#service jenkins status
 
 -----------------jenkins login page setup------------------------------
 
@@ -68,8 +68,8 @@ go to the particular porject repo and click on setting -> select webhooks -> add
 
 in terminal , direct to " cd /var/www/html" ->ls -> # cd /var/lib/jenkins/workspace/aws (copy this path from console ouput page of the item)
 
-usermod -aG www-data jenkins
-sudo chown jenkins:www-data html
+#usermod -aG www-data jenkins
+#sudo chown jenkins:www-data html
 
 --------------------------testing the working-------------------------------
 
